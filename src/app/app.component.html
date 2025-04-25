@@ -1,4 +1,4 @@
-<nav class="flex gap-4 border rounded-md p-4 m-4 shadow-md bg-white">
+<label class="flex gap-4 border rounded-md p-4 m-4 shadow-md" hlmLabel>
   <a
     routerLink="/home"
     routerLinkActive="underline"
@@ -19,11 +19,12 @@
   >
 
   <a
-    routerLink="/menu"
+    routerLink="/profile"
     routerLinkActive="underline"
     class="py-1 px-4 content-center"
-    >Menu</a
+    >Profile</a
   >
-</nav>
+</label>
 
+<app-menu></app-menu>
 <router-outlet></router-outlet>

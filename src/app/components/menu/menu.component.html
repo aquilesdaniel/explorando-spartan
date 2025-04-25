@@ -1,8 +1,15 @@
-<hlm-menu-bar class="w-auto m-4">
-  <button hlmMenuBarItem [brnMenuTriggerFor]="file">File</button>
-  <button hlmMenuBarItem [brnMenuTriggerFor]="edit">Edit</button>
-  <button hlmMenuBarItem [brnMenuTriggerFor]="view">View</button>
-  <button hlmMenuBarItem [brnMenuTriggerFor]="profiles">Profiles</button>
+<hlm-menu-bar class="m-4">
+  <div class="flex w-full items-center justify-between">
+    <div class="flex gap-2">
+      <button hlmMenuBarItem [brnMenuTriggerFor]="file">File</button>
+      <button hlmMenuBarItem [brnMenuTriggerFor]="edit">Edit</button>
+    </div>
+  </div>
+
+  <div class="flex gap-2 items-center whitespace-nowrap">
+    <hlm-switch [checked]="isDarkMode" (click)="toggleTheme()" />
+    <label class="px-2 py-1.5" hlmLabel> Dark mode </label>
+  </div>
 </hlm-menu-bar>
 
 <!-- Parte do file -->
@@ -35,6 +42,7 @@
   </hlm-sub-menu>
 </ng-template>
 
+<!-- Parte do edit -->
 <ng-template #edit>
   <hlm-menu variant="menubar" class="w-48">
     <hlm-menu-group>
@@ -44,66 +52,8 @@
 
     <hlm-menu-separator />
 
-    <button hlmMenuItem [brnMenuTriggerFor]="find">
-      Share
-      <hlm-menu-item-sub-indicator />
-    </button>
-
-    <hlm-menu-separator />
-
     <button hlmMenuItem>Cut</button>
     <button hlmMenuItem>Copy</button>
     <button hlmMenuItem>Paste</button>
-  </hlm-menu>
-</ng-template>
-
-<ng-template #find>
-  <hlm-sub-menu>
-    <button hlmMenuItem>Search the web</button>
-    <hlm-menu-separator />
-    <button hlmMenuItem>Find...</button>
-    <button hlmMenuItem>Find Next</button>
-    <button hlmMenuItem>Find Previous</button>
-  </hlm-sub-menu>
-</ng-template>
-
-<ng-template #view>
-  <hlm-menu variant="menubar">
-    <button hlmMenuItemCheckbox>
-      <hlm-menu-item-check />
-      Always Show Bookmarks Bar
-    </button>
-    <button hlmMenuItemCheckbox>
-      <hlm-menu-item-check />
-      Always Show Full URLs
-    </button>
-    <hlm-menu-separator />
-    <button inset hlmMenuItem>Reload</button>
-    <button inset disabled hlmMenuItem>Force Reload</button>
-    <hlm-menu-separator />
-    <button inset hlmMenuItem>Toggle Fullscreen</button>
-    <hlm-menu-separator />
-    <button inset hlmMenuItem>Hide Sidebar</button>
-  </hlm-menu>
-</ng-template>
-
-<ng-template #profiles>
-  <hlm-menu variant="menubar" class="w-48">
-    <button hlmMenuItemRadio>
-      <hlm-menu-item-radio />
-      Andy
-    </button>
-    <button hlmMenuItemRadio checked>
-      <hlm-menu-item-radio />
-      Benoit
-    </button>
-    <button hlmMenuItemRadio>
-      <hlm-menu-item-radio />
-      Lewis
-    </button>
-    <hlm-menu-separator />
-    <button inset hlmMenuItem>Edit...</button>
-    <hlm-menu-separator />
-    <button inset hlmMenuItem>Add Profile...</button>
   </hlm-menu>
 </ng-template>

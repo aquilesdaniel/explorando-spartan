@@ -5,15 +5,14 @@ import {
   HlmMenuBarItemDirective,
   HlmMenuComponent,
   HlmMenuGroupComponent,
-  HlmMenuItemCheckboxDirective,
-  HlmMenuItemCheckComponent,
   HlmMenuItemDirective,
-  HlmMenuItemRadioComponent,
-  HlmMenuItemRadioDirective,
   HlmMenuItemSubIndicatorComponent,
   HlmMenuSeparatorComponent,
   HlmSubMenuComponent,
 } from '@spartan-ng/ui-menu-helm';
+import { HlmLabelDirective } from '@spartan-ng/ui-label-helm';
+import { HlmSwitchComponent } from '@spartan-ng/ui-switch-helm';
+import { ThemeService } from '../../theme.service';
 
 @Component({
   selector: 'app-menu',
@@ -26,13 +25,21 @@ import {
     HlmMenuItemSubIndicatorComponent,
     HlmMenuSeparatorComponent,
     HlmMenuBarItemDirective,
-    HlmMenuItemCheckComponent,
-    HlmMenuItemRadioComponent,
     HlmMenuGroupComponent,
-    HlmMenuItemCheckboxDirective,
-    HlmMenuItemRadioDirective,
+    HlmLabelDirective,
+    HlmSwitchComponent,
   ],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css',
 })
-export class MenuComponent {}
+export class MenuComponent {
+  constructor(public themeService: ThemeService) {}
+
+  toggleTheme(): void {
+    this.themeService.toggleTheme();
+  }
+
+  get isDarkMode(): boolean {
+    return this.themeService.currentTheme;
+  }
+}
