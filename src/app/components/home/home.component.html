@@ -2,29 +2,27 @@
   tab="account"
   class="flex items-center justify-center flex-col min-h-screen"
 >
-  <!-- Barra de cima -->
   <hlm-tabs-list class="grid grid-cols-2" aria-label="tabs example">
     <button hlmTabsTrigger="account">Account</button>
     <button hlmTabsTrigger="password">Password</button>
   </hlm-tabs-list>
 
-  <!-- Parte de alteração de Nome e Nome de usuario -->
   <div hlmTabsContent="account">
     <section hlmCard>
       <div hlmCardHeader>
         <h3 hlmCardTitle>Account</h3>
-        <p hlmCardDescription>
+        <p class="text-wrap" hlmCardDescription>
           Make changes to your account here. Click save when you're done.
         </p>
       </div>
       <p hlmCardContent>
         <label class="block my-4" hlmLabel>
           Name
-          <input class="mt-1.5 w-full" placeholder="Nome" hlmInput />
+          <input class="mt-1.5 w-96" placeholder="Nome" hlmInput />
         </label>
         <label class="block my-4" hlmLabel>
           Username
-          <input class="mt-1.5 w-full" placeholder="@nomedeusuario" hlmInput />
+          <input class="mt-1.5 w-96" placeholder="@nomedeusuario" hlmInput />
         </label>
       </p>
       <div hlmCardFooter>
@@ -33,7 +31,6 @@
     </section>
   </div>
 
-  <!-- Parte de alteração de Senha -->
   <div hlmTabsContent="password">
     <section hlmCard>
       <div hlmCardHeader>
@@ -45,11 +42,11 @@
       <p hlmCardContent>
         <label class="block my-4" hlmLabel>
           Old Password
-          <input class="mt-1.5 w-full" type="password" hlmInput />
+          <input class="mt-1.5 w-96" type="password" hlmInput />
         </label>
         <label class="block my-4" hlmLabel>
           New Password
-          <input class="mt-1.5 w-full" type="password" hlmInput />
+          <input class="mt-1.5 w-96" type="password" hlmInput />
         </label>
       </p>
       <div hlmCardFooter>

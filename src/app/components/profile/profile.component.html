@@ -1,1 +1,51 @@
-<p>profile is work</p>
+<div class="flex items-center justify-center flex-col min-h-screen">
+  <div class="w-96" hlmCard>
+    <div class="text-center" hlmCardHeader>
+      <div [style.display]="profile ? 'block' : 'none'">
+        <img
+          class="flex justify-self-center w-48 h-48 rounded-full mb-4"
+          [src]="profile?.avatar_url"
+          alt="Foto de perfil"
+        />
+        <h1 class="mb-2" hlmCardTitle>
+          {{ profile?.name }}
+        </h1>
+        <p class="mb-2" hlmCardDescription>
+          {{ profile?.bio }}
+        </p>
+        <p class="mb-2" hlmCardDescription>
+          <span class="font-medium">{{ profile?.public_repos }}</span>
+          repositórios públicos
+        </p>
+        <a [href]="profile?.html_url" target="_blank" class="text-xs underline">
+          Ver perfil no GitHub
+        </a>
+      </div>
+
+      <p
+        hlmCardDescription
+        [style.display]="!profile && loading ? 'block' : 'none'"
+      >
+        Carregando... ⏳
+      </p>
+    </div>
+  </div>
+
+  <div class="mt-4 w-96" hlmCard>
+    <div class="pt-6" hlmCardContent>
+      <label for="github-user" hlmLabel>
+        Coloque o nome de usuário do GitHub:
+      </label>
+      <input
+        id="github-user"
+        (input)="updateUser($event)"
+        class="w-full"
+        hlmInput
+      />
+    </div>
+
+    <div hlmCardFooter>
+      <button (click)="searchProfile()" hlmBtn>Buscar Perfil</button>
+    </div>
+  </div>
+</div>

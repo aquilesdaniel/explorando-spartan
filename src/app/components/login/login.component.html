@@ -1,18 +1,25 @@
 <div class="flex items-center justify-center flex-col min-h-screen">
-  <div class="border rounded-md p-6 shadow-md" hlmCard>
-    <h1 class="flex py-2 mb-2 text-lg font-medium rounded-md">Tela de login</h1>
-    <label hlmLabel
-      >Email
-      <input class="w-80" hlmInput type="email" placeholder="Email" />
-    </label>
-    <label hlmLabel
-      >Senha
-      <input class="w-80" hlmInput type="password" placeholder="Senha" />
-    </label>
-    <a href="https://easyretro.io/tools/hsl-to-hex/" class="text-xs underline"
-      >Esqueci a senha</a
-    >
-    <div class="flex justify-between mt-2">
+  <div hlmCard>
+    <div hlmCardHeader>
+      <h1 hlmCardTitle>Tela de login</h1>
+      <p hlmCardDescription>Faça o login da sua conta aqui.</p>
+    </div>
+
+    <div hlmCardContent>
+      <label class="block mb-4" hlmLabel
+        >Email
+        <input class="w-96" type="email" hlmInput />
+      </label>
+      <label class="block" hlmLabel
+        >Senha
+        <input class="w-96" type="password" hlmInput />
+      </label>
+      <a href="https://google.com.br" class="text-xs underline"
+        >Esqueci a senha</a
+      >
+    </div>
+
+    <div hlmCardFooter class="place-content-between">
       <button hlmBtn>Logar</button>
       <button hlmBtn variant="secondary">Cadastrar</button>
     </div>

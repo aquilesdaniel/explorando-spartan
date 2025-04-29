@@ -1,7 +1,7 @@
 <hlm-menu-bar class="m-4">
   <div class="flex w-full items-center justify-between">
     <div class="flex gap-2">
-      <button hlmMenuBarItem [brnMenuTriggerFor]="file">File</button>
+      <button hlmMenuBarItem [brnMenuTriggerFor]="inicio">Inicio</button>
       <button hlmMenuBarItem [brnMenuTriggerFor]="edit">Edit</button>
     </div>
   </div>
@@ -12,37 +12,30 @@
   </div>
 </hlm-menu-bar>
 
-<!-- Parte do file -->
-<ng-template #file>
+<!-- -->
+<ng-template #inicio>
   <hlm-menu variant="menubar" class="w-48">
     <hlm-menu-group>
-      <button hlmMenuItem>New Tab</button>
-      <button hlmMenuItem>New Window</button>
-      <button hlmMenuItem disabled>New Incognito Window</button>
+      <button hlmMenuItem routerLink="/home" routerLinkActive="underline">
+        Home
+      </button>
+      <button hlmMenuItem routerLink="/about" routerLinkActive="underline">
+        About
+      </button>
+      <button hlmMenuItem routerLink="/login" routerLinkActive="underline">
+        Login
+      </button>
     </hlm-menu-group>
 
     <hlm-menu-separator />
 
-    <button hlmMenuItem [brnMenuTriggerFor]="share">
-      Share
-      <hlm-menu-item-sub-indicator />
+    <button hlmMenuItem routerLink="/profile" routerLinkActive="underline">
+      Profile
     </button>
-
-    <hlm-menu-separator />
-
-    <button hlmMenuItem>Print...</button>
   </hlm-menu>
 </ng-template>
 
-<ng-template #share>
-  <hlm-sub-menu>
-    <button hlmMenuItem>Email link</button>
-    <button hlmMenuItem>Messages</button>
-    <button hlmMenuItem>Notes</button>
-  </hlm-sub-menu>
-</ng-template>
-
-<!-- Parte do edit -->
+<!-- -->
 <ng-template #edit>
   <hlm-menu variant="menubar" class="w-48">
     <hlm-menu-group>
@@ -52,8 +45,10 @@
 
     <hlm-menu-separator />
 
-    <button hlmMenuItem>Cut</button>
-    <button hlmMenuItem>Copy</button>
-    <button hlmMenuItem>Paste</button>
+    <hlm-menu-group>
+      <button hlmMenuItem>Cut</button>
+      <button hlmMenuItem>Copy</button>
+      <button hlmMenuItem>Paste</button>
+    </hlm-menu-group>
   </hlm-menu>
 </ng-template>

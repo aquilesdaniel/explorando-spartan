@@ -1,10 +1,12 @@
-import { Component, NgModule } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { MenuComponent } from './components/menu/menu.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterModule, MenuComponent],
+  imports: [RouterModule, MenuComponent, HttpClientModule, FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

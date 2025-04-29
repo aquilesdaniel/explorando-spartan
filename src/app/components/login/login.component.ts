@@ -2,7 +2,14 @@ import { Component } from '@angular/core';
 import { HlmButtonDirective } from '@spartan-ng/ui-button-helm';
 import { HlmInputDirective } from '@spartan-ng/ui-input-helm';
 import { HlmLabelDirective } from '@spartan-ng/ui-label-helm';
-import { HlmCardDirective } from '@spartan-ng/ui-card-helm';
+import {
+  HlmCardDirective,
+  HlmCardHeaderDirective,
+  HlmCardFooterDirective,
+  HlmCardContentDirective,
+  HlmCardTitleDirective,
+  HlmCardDescriptionDirective,
+} from '@spartan-ng/ui-card-helm';
 
 @Component({
   selector: 'app-login',
@@ -11,6 +18,11 @@ import { HlmCardDirective } from '@spartan-ng/ui-card-helm';
     HlmInputDirective,
     HlmLabelDirective,
     HlmCardDirective,
+    HlmCardHeaderDirective,
+    HlmCardFooterDirective,
+    HlmCardContentDirective,
+    HlmCardTitleDirective,
+    HlmCardDescriptionDirective,
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
